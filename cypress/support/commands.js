@@ -1,12 +1,16 @@
 
-Cypress.Commands.add('login', (username, password) => {
-    if (username) {
-        cy.get('[data-test="username"]').clear().type(username);
+Cypress.Commands.add('login', (tipo) => {
+  cy.fixture('login').then((dados) => {
+    const user = dados[tipo];
+
+    if (user.username) {
+      cy.get('[data-test="username"]').clear().type(user.username);
     }
 
-    if (password) {
-        cy.get('[data-test="password"]').clear().type(password);
+    if (user.password) {
+      cy.get('[data-test="password"]').clear().type(user.password);
     }
 
     cy.get('[data-test="login-button"]').click();
+  });
 });
