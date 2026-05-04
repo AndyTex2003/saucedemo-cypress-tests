@@ -3,7 +3,7 @@
 describe('Login - SauceDemo', () => {
 
   beforeEach(() => {
-    cy.visit('https://saucedemo.com/');
+    cy.visit('/');
   });
   
   it('Login com dados válidos deve permitir entrada no sistema', () => {    
