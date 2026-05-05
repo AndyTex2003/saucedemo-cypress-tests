@@ -28,4 +28,25 @@ describe('Inventory - SauceDemo', () => {
         });
     });
 
+    it('Deve adicionar um produto ao carrinho', () => {
+        cy.contains('.inventory_item', 'Sauce Labs Backpack')
+        .within(() => {
+            cy.contains('button', 'Add to cart').click();
+        });
+        
+        cy.get('.shopping_cart_badge')
+            .should('have.text', '1');
+    });
+
+    it('Deve remover um produto do carrinho', () => {
+        cy.contains('.inventory_item', 'Sauce Labs Backpack')
+        .within(() => {
+            cy.contains('button', 'Add to cart').click();
+            cy.contains('button', 'Remove').click()
+        });
+
+        cy.get('.shopping_cart_badge')
+            .should('not.exist');
+    });
+    
 });
