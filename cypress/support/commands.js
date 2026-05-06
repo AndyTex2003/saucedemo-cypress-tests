@@ -3,6 +3,10 @@ Cypress.Commands.add('login', (tipo) => {
   cy.fixture('login').then((dados) => {
     const user = dados[tipo];
 
+    if (!user) {
+      throw new Error(`Tipo de login inválido: ${tipo}`);
+    }
+
     if (user.username) {
       cy.get('[data-test="username"]').clear().type(user.username);
     }
@@ -15,21 +19,38 @@ Cypress.Commands.add('login', (tipo) => {
   });
 });
 
-Cypress.Commands.add('preencherCheckout', (firstName, lastName, postalCode) => {
-  cy.get('[data-test="checkout"]').click();
 
-  cy.get('[data-test="firstName"]').clear().type(firstName);
-  cy.get('[data-test="lastName"]').clear().type(lastName);
-  cy.get('[data-test="postalCode"]').clear().type(postalCode);
+Cypress.Commands.add('preencherCheckout', (tipo) => {
+  cy.fixture('checkout').then((dados) => {
+    const user = dados[tipo];
 
-  cy.get('[data-test="continue"]').click();
-  
+    if (!user) {
+      throw new Error(`Tipo de checkout inválido: ${tipo}`);
+    }
+
+    cy.get('[data-test="checkout"]').click();
+
+    if (user.firstName) {
+      cy.get('[data-test="firstName"]').clear().type(user.firstName);
+    }
+
+    if (user.lastName) {
+      cy.get('[data-test="lastName"]').clear().type(user.lastName);
+    }
+
+    if (user.postalCode) {
+      cy.get('[data-test="postalCode"]').clear().type(user.postalCode);
+    }
+
+    cy.get('[data-test="continue"]').click();
+  });
 });
+
 
 Cypress.Commands.add('adicionarProdutoAoCarrinho', (nomeProduto) => {
   cy.contains('.inventory_item', nomeProduto)
     .within(() => {
-      cy.contains('button', 'Add to cart').click();
+      cy.get('button[data-test^="add-to-cart"]').click();
     });
 
   cy.get('.shopping_cart_link').click();
