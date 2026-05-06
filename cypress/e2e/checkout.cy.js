@@ -1,47 +1,29 @@
 
 
-describe('Checkout - SouceDemo', () => {
+describe('Checkout - SauceDemo', () => {
 
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('/');
         cy.login('valido');
-
-        // preparando cenário
-        cy.contains('.inventory_item', 'Sauce Labs Backpack')
-            .within(() => {
-                cy.contains('button', 'Add to cart').click();
-            });
-
-        cy.get('.shopping_cart_link').click();
+        cy.adicionarProdutoAoCarrinho('Sauce Labs Backpack');        
+        
     });
 
     it('Deve iniciar o checkout', () => {
-        cy.contains('button', 'Checkout').click();
+        cy.get('[data-test="checkout"]').click();
 
         cy.url().should('include', '/checkout-step-one');
         cy.contains('Checkout: Your Information').should('be.visible');
     });
 
     it('Deve preencher dados do checkout', () => {
-        cy.contains('button', 'Checkout').click();
-
-        cy.get('[data-test="firstName"]').type('Anderson');
-        cy.get('[data-test="lastName"]').type('Santos');
-        cy.get('[data-test="postalCode"]').type('12345');
-
-        cy.get('[data-test="continue"]').click();
+        cy.preencherCheckout('Anderson', 'Santos', '12345');
 
         cy.url().should('include', '/checkout-step-two');
     });
 
     it('Deve finalizar a compra com sucesso', () => {
-        cy.contains('button', 'Checkout').click();
-
-        cy.get('[data-test="firstName"]').type('Anderson');
-        cy.get('[data-test="lastName"]').type('Santos');
-        cy.get('[data-test="postalCode"]').type('12345');
-
-        cy.get('[data-test="continue"]').click();
+       cy.preencherCheckout('Anderson', 'Santos', '12345');
 
         // valida que chegou no resumo
         cy.url().should('include', '/checkout-step-two');
