@@ -1,0 +1,22 @@
+{
+    "valido": {
+        "firstName": "Anderson",
+        "lastName": "Santos",
+        "postalCode": "12345"
+    },
+    "semNome": {
+        "firstName": "",
+        "lastName": "Santos",
+        "postalCode": "12345"
+    },
+    "semSobrenome": {
+        "firstName": "Anderson",
+        "lastName": "",
+        "postalCode": "12345"
+    },
+    "semCep": {
+        "firstName": "Anderson",
+        "lastName": "Santos",
+        "postalCode": ""
+    }
+}
