@@ -6,7 +6,8 @@
   "scripts": {
     "test": "cypress run",
     "cy:headed": "cypress run --headed",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:reporter": "cypress run --reporter mochawesome"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/AndyTex2003/saucedemo-cypress-tests#readme",
   "devDependencies": {
-    "cypress": "^15.14.1"
+    "cypress": "^15.14.1",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
   }
 }
