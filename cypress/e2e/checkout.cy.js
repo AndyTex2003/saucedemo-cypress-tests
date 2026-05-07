@@ -5,7 +5,8 @@ describe('Checkout - SauceDemo', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.login('valido');
-        cy.adicionarProdutoAoCarrinho('Sauce Labs Backpack');
+        cy.adicionarProduto('Sauce Labs Backpack');
+        cy.irParaCarrinho();
 
     });
 
