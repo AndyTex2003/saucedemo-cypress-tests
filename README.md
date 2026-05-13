@@ -1,4 +1,4 @@
-````md
+
 # 🧪 SauceDemo Cypress Tests
 
 ![Cypress](https://img.shields.io/badge/Cypress-15.14.1-brightgreen)
@@ -201,5 +201,4 @@ Anderson Batista dos Santos
 * LinkedIn: https://www.linkedin.com/in/anderson-santos-qa/
 * GitHub: https://github.com/AndyTex2003
 
-```
-```
+
