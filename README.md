@@ -99,7 +99,7 @@ cypress/
       │
       ├── commands.js
       └── e2e.js
-````
+```
 
 ---
 
@@ -166,6 +166,10 @@ O relatório consolidado será gerado em:
 ```text
 cypress/reports/mochawesome/report.html
 ```
+
+## Preview do relatório
+
+![Relatório HTML](./assets/report-html.png)
 
 ---
 
