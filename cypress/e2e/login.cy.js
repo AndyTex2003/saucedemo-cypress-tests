@@ -38,5 +38,14 @@ describe('Login - SauceDemo', () => {
     cy.get('[data-test="error"]').should('be.visible');
     cy.contains('Password is required').should('be.visible');
   });
+
+  it('Login com usuário bloqueado deve exibir mensagem de erro', () => {
+
+    cy.login('bloqueado');
+
+    cy.get('[data-test="error"]')
+      .should('be.visible')
+      .and('contain', 'Sorry, this user has been locked out.');
+  });
   
 });
