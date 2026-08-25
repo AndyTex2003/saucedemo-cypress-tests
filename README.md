@@ -1,5 +1,5 @@
 
-# 🧪 SauceDemo Cypress Tests
+# SauceDemo - Automação Web E2E com Cypress
 
 ![Cypress](https://img.shields.io/badge/Cypress-15.14.1-brightgreen)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
@@ -7,31 +7,32 @@
 ![Mochawesome](https://img.shields.io/badge/Reporter-Mochawesome-blue)
 ![Status](https://img.shields.io/badge/Tests-Passing-success)
 
-Projeto de automação de testes E2E utilizando Cypress no site [SauceDemo](https://www.saucedemo.com/).
+Projeto de automação de testes **End-to-End (E2E)** desenvolvido com **Cypress e JavaScript**, utilizando a aplicação **SauceDemo** como sistema sob teste.
 
-O objetivo deste projeto é praticar conceitos modernos de automação de testes, organização de framework e boas práticas utilizadas no mercado de QA Automation.
+O projeto cobre fluxos importantes da aplicação, incluindo autenticação, navegação pelo inventário, gerenciamento do carrinho e checkout, aplicando boas práticas de organização, reutilização de código, utilização de fixtures, custom commands e geração de relatórios de execução.
 
 ---
 
-# 🚀 Tecnologias utilizadas
+## Tecnologias Utilizadas
 
-- Cypress
-- JavaScript
-- Node.js
+- Cypress 15.14.1
+- JavaScript (ES6+)
+- Node.js 24.x
 - Mochawesome
-- Git & GitHub
+- Git
+- GitHub
 
 ---
 
-# ✅ Funcionalidades automatizadas
+## Funcionalidades Automatizadas
 
-## 🔐 Login
+### Login
 
-### Cenários positivos
+#### Cenários positivos
 
 - Login com credenciais válidas
 
-### Cenários negativos
+#### Cenários negativos
 
 - Login com senha inválida
 - Login com usuário vazio
@@ -39,7 +40,7 @@ O objetivo deste projeto é praticar conceitos modernos de automação de testes
 
 ---
 
-## 🛍️ Inventory
+### Inventory
 
 - Validação da listagem de produtos
 - Validação de nome e preço dos produtos
@@ -48,7 +49,7 @@ O objetivo deste projeto é praticar conceitos modernos de automação de testes
 
 ---
 
-## 🛒 Cart
+### Cart
 
 - Acesso à página do carrinho
 - Validação de produto adicionado
@@ -56,16 +57,16 @@ O objetivo deste projeto é praticar conceitos modernos de automação de testes
 
 ---
 
-## 💳 Checkout
+### Checkout
 
-### Cenários positivos
+#### Cenários positivos
 
 - Início do checkout
 - Preenchimento dos dados
 - Finalização da compra
 - Validação da mensagem de sucesso
 
-### Cenários negativos
+#### Cenários negativos
 
 - Checkout sem nome
 - Checkout sem sobrenome
@@ -73,51 +74,64 @@ O objetivo deste projeto é praticar conceitos modernos de automação de testes
 
 ---
 
-# 📁 Estrutura do projeto
+## Estrutura do Projeto
 
 ```text
-cypress/
- ├── e2e/
- │    ├── cart.cy.js
- │    ├── checkout.cy.js
- │    ├── inventory.cy.js
- │    └── login.cy.js
- │
- ├── fixtures/
- │    ├── checkout.json
- │    └── login.json
- │
- ├── reports/
- │
- └── support/
-      ├── commands/
-      │    ├── cart.js
-      │    ├── checkout.js
-      │    ├── inventory.js
-      │    ├── login.js
-      │    └── common.js
-      │
-      ├── commands.js
-      └── e2e.js
+saucedemo-cypress-tests/
+│
+├── .github/
+│   └── workflows/
+│       └── cypress.yml
+│
+├── assets/
+│   └── report-html.png
+│
+├── cypress/
+│   ├── e2e/
+│   │   ├── cart.cy.js
+│   │   ├── checkout.cy.js
+│   │   ├── inventory.cy.js
+│   │   └── login.cy.js
+│   │
+│   ├── fixtures/
+│   │   ├── checkout.json
+│   │   ├── example.json
+│   │   └── login.json
+│   │
+│   └── support/
+│       ├── commands/
+│       │   ├── cart.js
+│       │   ├── checkout.js
+│       │   ├── common.js
+│       │   ├── inventory.js
+│       │   └── login.js
+│       ├── commands.js
+│       └── e2e.js
+│
+├── .gitignore
+├── README.md
+├── cypress.config.js
+├── package-lock.json
+└── package.json
 ```
 
 ---
 
-# ⚙️ Instalação do projeto
+## Instalação do Projeto
 
-Clone o repositório:
+### Clonar o repositório
 
 ```bash
 git clone https://github.com/AndyTex2003/saucedemo-cypress-tests.git
 ```
 
-Acesse a pasta do projeto:
+### Acessar a pasta do projeto
 
 ```bash
 cd saucedemo-cypress-tests
 ```
 
-Instale as dependências:
+### Instalar as dependências
 
 ```bash
 npm install
@@ -125,84 +139,91 @@ npm install
 
 ---
 
-# ▶️ Como executar os testes
+## Como Executar os Testes
 
-## Abrir o Cypress
+### Abrir o Cypress
+
+Abre a interface gráfica do Cypress para seleção e execução interativa dos testes.
 
 ```bash
 npm run cy:open
 ```
 
----
+### Executar os testes em modo headed
 
-## Executar testes em modo headed
+Executa os testes exibindo o navegador durante a execução.
 
 ```bash
 npm run cy:headed
 ```
 
----
+### Executar os testes e gerar relatório HTML consolidado
 
-## Executar testes e gerar relatório HTML consolidado
-
-```bash
-npm run cy:report
-```
-
----
-
-# 📊 Relatórios HTML
-
-O projeto utiliza Mochawesome para geração de relatórios automatizados.
-
-Após a execução do comando:
+Executa a suíte automatizada e gera o relatório consolidado com Mochawesome.
 
 ```bash
 npm run cy:report
 ```
 
-O relatório consolidado será gerado em:
+---
+
+## Relatórios HTML
+
+O projeto utiliza **cypress-mochawesome-reporter** para geração de relatórios HTML das execuções automatizadas.
+
+### Gerar o relatório
+
+Execute a suíte de testes em modo headless:
+
+```bash
+npm test
+```
+
+Os arquivos do relatório são gerados na pasta:
 
 ```text
-cypress/reports/mochawesome/report.html
+cypress/reports/
 ```
 
-## Preview do relatório
+A pasta de relatórios é gerada durante a execução dos testes e, por isso, não aparece na estrutura versionada do projeto.
 
-![Relatório HTML](./assets/report-html.png)
+### Preview do relatório
 
----
-
-# 🧠 Boas práticas aplicadas
-
-* Organização dos testes por feature
-* Uso de custom commands
-* Modularização dos commands
-* Reutilização de código
-* Uso de fixtures para massa de teste
-* Uso de seletores estáveis (`data-test`)
-* Separação entre cenários positivos e negativos
-* Estrutura escalável para evolução do framework
-* Geração de relatórios automatizados
+![Preview do relatório](./assets/report-html.png)
 
 ---
 
-# 🚀 Melhorias futuras
+## Boas Práticas Aplicadas
 
-* Integração com GitHub Actions (CI/CD)
-* Pipeline automatizada
-* Upload de artifacts dos reports
-* Execução em múltiplos navegadores
-* Implementação de Page Objects
-* Integração com Docker
+- Organização dos testes por feature
+- Uso de custom commands
+- Modularização dos commands
+- Reutilização de código
+- Uso de fixtures para massa de teste
+- Uso de seletores estáveis (`data-test`)
+- Separação entre cenários positivos e negativos
+- Estrutura escalável para evolução da automação
+- Geração de relatórios automatizados
 
 ---
 
-# 👨‍💻 Autor
+## Evoluções Futuras
 
-Anderson Batista dos Santos
+- Disponibilizar os relatórios de execução como artifacts do GitHub Actions.
+- Executar a suíte automatizada em múltiplos navegadores.
+- Avaliar a adoção de Page Objects para cenários que demandem maior abstração da interface.
+- Integrar a execução dos testes a um ambiente Docker.
+- Expandir a cobertura automatizada com novos cenários e comportamentos da aplicação.
 
-* LinkedIn: https://www.linkedin.com/in/anderson-santos-qa/
-* GitHub: https://github.com/AndyTex2003
+---
+
+## Autor
+
+**Anderson Batista dos Santos**
+
+QA | Testes de Software | Qualidade de Software
+
+- LinkedIn: [linkedin.com/in/anderson-santos-qa](https://www.linkedin.com/in/anderson-santos-qa/)
+- GitHub: [github.com/AndyTex2003](https://github.com/AndyTex2003)
 
 
