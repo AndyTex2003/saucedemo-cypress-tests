@@ -157,14 +157,6 @@ Executa os testes exibindo o navegador durante a execução.
 npm run cy:headed
 ```
 
-### Executar os testes e gerar relatório HTML consolidado
-
-Executa a suíte automatizada e gera o relatório consolidado com Mochawesome.
-
-```bash
-npm run cy:report
-```
-
 ---
 
 ## Relatórios HTML
