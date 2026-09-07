@@ -1,13 +1,13 @@
 
 # SauceDemo - Automação Web E2E com Cypress
 
-![Cypress](https://img.shields.io/badge/Cypress-15.14.1-brightgreen)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![Node.js](https://img.shields.io/badge/Node.js-24.x-green)
-![Mochawesome](https://img.shields.io/badge/Reporter-Mochawesome-blue)
-![Status](https://img.shields.io/badge/Tests-Passing-success)
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=flat-square&logo=cypress&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![E2E](https://img.shields.io/badge/Testes-E2E-8250DF?style=flat-square)
+![Mochawesome](https://img.shields.io/badge/Report-Mochawesome-2DA44E?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Passing-2DA44E?style=flat-square)
 
-Projeto de automação de testes **End-to-End (E2E)** desenvolvido com **Cypress e JavaScript**, utilizando a aplicação **SauceDemo** como sistema sob teste.
+Projeto de automação de testes **End-to-End (E2E)** desenvolvido com **Cypress** e **JavaScript**, utilizando a aplicação **SauceDemo** como sistema sob teste.
 
 O projeto cobre fluxos importantes da aplicação, incluindo autenticação, navegação pelo inventário, gerenciamento do carrinho e checkout, aplicando boas práticas de organização, reutilização de código, utilização de fixtures, custom commands e geração de relatórios de execução.
 
@@ -15,12 +15,12 @@ O projeto cobre fluxos importantes da aplicação, incluindo autenticação, nav
 
 ## Tecnologias Utilizadas
 
-- Cypress 15.14.1
-- JavaScript (ES6+)
-- Node.js 24.x
-- Mochawesome
-- Git
-- GitHub
+![Cypress](https://img.shields.io/badge/Cypress-15.14.1-17202C?style=flat-square&logo=cypress&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-24.x-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Mochawesome](https://img.shields.io/badge/Report-Mochawesome-2DA44E?style=flat-square)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 
 ---
 
@@ -125,7 +125,7 @@ saucedemo-cypress-tests/
 git clone https://github.com/AndyTex2003/saucedemo-cypress-tests.git
 ```
 
-### Acessar a pasta do projeto
+### Acessar o diretório
 
 ```bash
 cd saucedemo-cypress-tests
@@ -187,12 +187,12 @@ A pasta de relatórios é gerada durante a execução dos testes e, por isso, n�
 
 ## Boas Práticas Aplicadas
 
-- Organização dos testes por feature
-- Uso de custom commands
-- Modularização dos commands
+- Organização dos testes por **feature**
+- Uso de **custom commands**
+- Modularização dos comandos
 - Reutilização de código
-- Uso de fixtures para massa de teste
-- Uso de seletores estáveis (`data-test`)
+- Uso de **fixtures** para massa de teste
+- Uso de seletores estáveis com `data-test`
 - Separação entre cenários positivos e negativos
 - Estrutura escalável para evolução da automação
 - Geração de relatórios automatizados
@@ -201,11 +201,11 @@ A pasta de relatórios é gerada durante a execução dos testes e, por isso, n�
 
 ## Evoluções Futuras
 
-- Disponibilizar os relatórios de execução como artifacts do GitHub Actions.
-- Executar a suíte automatizada em múltiplos navegadores.
-- Avaliar a adoção de Page Objects para cenários que demandem maior abstração da interface.
-- Integrar a execução dos testes a um ambiente Docker.
-- Expandir a cobertura automatizada com novos cenários e comportamentos da aplicação.
+- Disponibilizar os relatórios de execução como **artifacts do GitHub Actions**
+- Executar a suíte automatizada em **múltiplos navegadores**
+- Avaliar a adoção de **Page Objects** para cenários que demandem maior abstração da interface
+- Integrar a execução dos testes a um ambiente **Docker**
+- Expandir a **cobertura automatizada** com novos cenários e comportamentos da aplicação
 
 ---
 
